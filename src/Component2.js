@@ -20,4 +20,4 @@ const Component2 = observer(() => {
 });
 
 export default Component2;
-startRenderingOn(<Component2 />, 'componentB');
+startRenderingOn(<Component2 />, '.componentB');

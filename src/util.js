@@ -5,11 +5,12 @@ import { AppStoreCtx, AppStore } from './store/AppStore';
 
 const store = new AppStore();
 
-export const startRenderingOn = (component, tagId) => {
-  const e = document.getElementById(tagId);
-  if (e)
+export const startRenderingOn = (component, selector) => {
+  const e = document.querySelectorAll(selector);
+  for (let i of e) {
     ReactDOM.render(
       <AppStoreCtx.Provider value={store}>{component}</AppStoreCtx.Provider>,
-      e
+      i
     );
+  }
 };
